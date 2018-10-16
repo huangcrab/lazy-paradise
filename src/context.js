@@ -1,0 +1,59 @@
+import React, { Component } from "react";
+
+const Context = React.createContext();
+const Reducer = (state, action) => {
+  switch (action.type) {
+    case "NEXT_ITEM":
+      return {
+        ...state,
+        index: state.index >= state.items.length - 1 ? 0 : state.index + 1
+      };
+    case "PREV_ITEM":
+      return {
+        ...state,
+        index: state.index <= 0 ? state.items.length - 1 : state.index - 1
+      };
+
+    default:
+      return state;
+  }
+};
+
+export class Provider extends Component {
+  state = {
+    items: [
+      {
+        id: 1,
+        name: "Authentication App",
+        link: "https://warm-island-73436.herokuapp.com/",
+        tech: ["Angular", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+      },
+      {
+        id: 2,
+        name: "Connector App",
+        link: "https://limitless-beach-24902.herokuapp.com/",
+        tech: ["React", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+      },
+      {
+        id: 3,
+        name: "Client Panel App",
+        link: "https://clientpanel-3bd53.firebaseapp.com/",
+        tech: ["Angular", "Firebase", "Bootstrap"]
+      }
+    ],
+    index: 0,
+    appear: true,
+    dispatch: action => {
+      this.setState(state => Reducer(state, action));
+    }
+  };
+  render() {
+    return (
+      <Context.Provider value={this.state}>
+        {this.props.children}
+      </Context.Provider>
+    );
+  }
+}
+
+export const Consumer = Context.Consumer;
