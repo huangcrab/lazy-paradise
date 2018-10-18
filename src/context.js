@@ -22,23 +22,59 @@ const Reducer = (state, action) => {
 export class Provider extends Component {
   state = {
     items: [
+      // {
+      //   id: 1,
+      //   name: "Authentication App",
+      //   link: "https://warm-island-73436.herokuapp.com/",
+      //   tech: ["Angular", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+      // },
+      // {
+      //   id: 2,
+      //   name: "Connector App",
+      //   link: "https://limitless-beach-24902.herokuapp.com/",
+      //   tech: ["React", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+      // },
+      // {
+      //   id: 3,
+      //   name: "Client Panel App",
+      //   link: "https://clientpanel-3bd53.firebaseapp.com/",
+      //   tech: ["Angular", "Firebase", "Bootstrap"]
+      // }
       {
         id: 1,
         name: "Authentication App",
-        link: "https://warm-island-73436.herokuapp.com/",
-        tech: ["Angular", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+        date: "Aug 16",
+        description: `ML Analyzer is a desktop application traverse the XML file generated from IBM Process Designer.
+      Make the
+      debug in IBM Process Designer at least 100 times faster, it can locate logic and syntax errors in
+      thousands
+      of processes in couple minutes, it also outputs the error logs with all the details of all the
+      processes
+      in the file.`
       },
       {
         id: 2,
-        name: "Connector App",
-        link: "https://limitless-beach-24902.herokuapp.com/",
-        tech: ["React", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+        name: "22222222222",
+        date: "Aug 18",
+        description: `ML Analyzer is a desktop application traverse the XML file generated from IBM Process Designer.
+      Make the
+      debug in IBM Processs Designer at least 100 times faster, it can locate logic and syntax errors in
+      thousands
+      of processes in couple minutes, it also outputs the error logs with all the details of all the
+      processes
+      in the file.`
       },
       {
         id: 3,
-        name: "Client Panel App",
-        link: "https://clientpanel-3bd53.firebaseapp.com/",
-        tech: ["Angular", "Firebase", "Bootstrap"]
+        name: "333333333",
+        date: "Aug 19",
+        description: `ML Analyzer is a desktop application traverse the XML file generated from IBM Process Designer.
+      Make the
+      debug in IBM Process Designer at least 100 times faster, it can locate logic and syntax errors in
+      thousands
+      of processes in couple minutes, it also outputs the error logs with all the details of all the
+      processes
+      in the file.`
       }
     ],
     index: 0,

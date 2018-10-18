@@ -12,8 +12,10 @@ class ItemControl extends Component {
       type: "PREV_ITEM"
     });
   };
-  onExitClick = () => {
-    this.props.exit();
+  onExitClick = dispatch => {
+    dispatch({
+      type: "MAIN_PAGE"
+    });
   };
 
   render() {
@@ -30,7 +32,11 @@ class ItemControl extends Component {
               >
                 Prev {name}
               </a>
-              <a className="btn control-btn" id="close-demo">
+              <a
+                className="btn control-btn"
+                id="close-demo"
+                onClick={this.onExitClick.bind(this, dispatch)}
+              >
                 X
               </a>
               <a

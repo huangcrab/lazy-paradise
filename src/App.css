@@ -75,20 +75,20 @@ span {
   opacity: 0;
 }
 
-.demo-container {
+.item-container {
   position: relative;
   margin: 0 auto;
 }
 
-.demo {
+.item {
   padding: 10px;
-  max-width: 220px;
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
   color: white;
   position: absolute;
-  top: 0;
   left: 0;
+  right: 0;
+  max-width: 80%;
 }
 
 body {

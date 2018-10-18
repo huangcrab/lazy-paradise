@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Consumer } from "../../context";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -43,10 +42,5 @@ class Demo extends Component {
     );
   }
 }
-Demo.propTypes = {
-  demo: PropTypes.object.isRequired,
-  length: PropTypes.number.isRequired,
-  index: PropTypes.number.isRequired
-};
 
 export default Demo;
