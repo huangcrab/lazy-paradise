@@ -7,7 +7,7 @@ class Project extends Component {
     return (
       <Consumer>
         {value => {
-          const { items, index } = value;
+          const { items, index, direction } = value;
           return (
             <TransitionGroup className="item-container">
               <CSSTransition key={index} timeout={2000} classNames="fade">

@@ -6,12 +6,14 @@ const Reducer = (state, action) => {
     case "NEXT_ITEM":
       return {
         ...state,
-        index: state.index >= state.items.length - 1 ? 0 : state.index + 1
+        index: state.index >= state.items.length - 1 ? 0 : state.index + 1,
+        direction: "right"
       };
     case "PREV_ITEM":
       return {
         ...state,
-        index: state.index <= 0 ? state.items.length - 1 : state.index - 1
+        index: state.index <= 0 ? state.items.length - 1 : state.index - 1,
+        direction: "left"
       };
 
     default:
@@ -78,7 +80,7 @@ export class Provider extends Component {
       }
     ],
     index: 0,
-    appear: true,
+    direction: "",
     dispatch: action => {
       this.setState(state => Reducer(state, action));
     }

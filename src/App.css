@@ -1,46 +1,184 @@
-* {
-  box-sizing: border-box;
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
-.btn:hover {
-  cursor: cell;
+
+body {
+  line-height: 1;
 }
-.project a {
-  color: #df541d;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
-.project a:visited {
-  color: #df541d;
+
+nav ul {
+  list-style: none;
 }
-span {
-  color: #df541d;
+
+blockquote,
+q {
+  quotes: none;
 }
-.wrapper {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  padding-bottom: 0;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+/********************************* My Code *********************************/
+body {
+  background-color: black;
+  color: white;
+}
+
+#particle-js {
   overflow: hidden;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-.scaled-frame {
-  width: 1000px;
-  height: 800px;
-  border: 0px;
-  margin: 0 auto;
-}
-.scaled-frame {
-  zoom: 0.2;
-  -moz-transform: scale(0.2);
-  -moz-transform-origin: 0 0;
-  -o-transform: scale(0.2);
-  -o-transform-origin: 0 0;
-  -webkit-transform: scale(0.2);
-  -webkit-transform-origin: 0 0;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .scaled-frame {
-    zoom: 1;
-  }
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -99;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
 }
 /*React Transition*/
 /*appear - on page load*/
@@ -65,11 +203,11 @@ span {
 
 /* exit */
 .fade-exit {
-  opacity: 1;
+  left: 0;
 }
 .fade-exit.fade-exit-active {
-  opacity: 0;
-  transition: opacity 1000ms linear;
+  left: 100vw;
+  transition: left 1000ms linear;
 }
 .fade-exit-done {
   opacity: 0;
@@ -78,319 +216,41 @@ span {
 .item-container {
   position: relative;
   margin: 0 auto;
+  top: 20%;
 }
 
 .item {
-  padding: 10px;
+  z-index: -99;
   text-align: center;
   margin: 0 auto;
   color: white;
   position: absolute;
   left: 0;
   right: 0;
-  max-width: 80%;
+  max-height: 60vh;
+  width: 80%;
 }
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
-  overflow-x: hidden;
-  background: #000;
-}
-
-.loading {
+.section {
   height: 100vh;
   width: 100vw;
-  background: #000;
-  display: flex;
-  z-index: 100;
   position: absolute;
 }
-
-#box {
-  background: #fff;
+.control {
   position: relative;
-  height: 80px;
-  width: 80px;
-  border-radius: 20px;
-  color: #000;
-  font-size: 7.5rem;
-  text-align: center;
-  line-height: 67px;
-  font-weight: bold;
-  margin: auto;
-}
-.v-header {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  color: #fff;
-}
-
-.container {
-  max-width: 960px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin: auto;
-  text-align: center;
-}
-
-.fullscreen-video-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background: #000;
-}
-
-.fullscreen-video-wrap video {
-  min-width: 100%;
-  min-height: 100%;
-}
-
-.icon-group {
-  position: relative;
-  background: white;
-  opacity: 0.8;
-  display: inline;
-  padding: 20px 10px 0px 10px;
-  border-radius: 15px;
+  display: block;
   margin: 0 auto;
-}
-a.frame-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  width: max-content;
   z-index: 99;
+  margin-top: 80vh;
 }
-a.frame-overlay:hover {
-  background: #0c3b94;
-  opacity: 0.5;
-  cursor: cell;
+
+ul.control li {
+  display: inline;
 }
-.header-overlay {
-  /* height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #366088;
-  z-index: 1;
-  opacity: 0.2; */
-}
-#particle-js {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  opacity: 0.5;
-}
-/*---------------------- Gradient -----------------------*/
-.gradient1 {
-  background: #000000;
-  color: black;
-  position: relative;
-  text-shadow: 1px 1px 0px #000000, 1px -1px 0px #000000, -1px -1px 0px #000000,
-    -1px 1px 0px #000000;
-}
-.gradient1::before,
-.gradient1::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-}
-.gradient1::before {
-  background: linear-gradient(
-    to right,
-    #27328e,
-    #faaa54,
-    #e23b4a,
-    #db0768,
-    #360670
-  );
-  content: "";
-  display: block;
-  mix-blend-mode: screen;
-}
-.gradient1::after {
-  content: 'Welcome to "Lazy Paradise"';
-  background: #000000;
-  color: white;
-  mix-blend-mode: multiply;
-  z-index: 1;
-}
-/* ---------------------- Gradient ----------------------- */
-.header-content,
-.header-content-about,
-.projects,
-.demos {
-  z-index: 3;
-}
-.header-content h1 {
-  font-size: 100px;
-}
-.header-content h1,
-.header-content-about h1 {
-  font-size: 50px;
-  margin-bottom: 0;
-  align-content: center;
-}
-.header-content p,
-.header-content-about p {
-  height: 15rem;
-  font-size: 1.5rem;
-  display: block;
-  padding-bottom: 2rem;
-}
-.header-content p strong {
-  color: #e42626;
-  text-transform: uppercase;
-}
-.projects {
-  position: relative;
-  height: 50%;
-  border-radius: 20px;
-  padding: 0;
-}
-.projects p {
-  font-size: 1.2rem;
-  height: 12rem;
-  margin: 0;
-}
-.control-btn {
-  position: relative;
-  margin: 0;
-  bottom: 0rem;
-}
-.project h1 {
-  margin: 0;
-}
-.demo {
-  display: none;
-}
-.project {
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-.active {
-  display: block;
-}
-.about-icon {
-  font-size: 4rem;
-  color: #6dafec;
-  padding-left: 1rem;
-}
-.btn {
-  background: #0c3b94;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 1rem 2rem;
-  text-decoration: none;
-}
-#demos,
-#demos-about {
-  background: #e42626;
-}
-.demos {
-  margin: 0 auto;
-}
-@media (max-width: 960px) {
-  .container {
-    padding-right: 3rem;
-    padding-left: 3rem;
-  }
-  .header-content p,
-  .header-content-about p {
-    height: 15rem;
-    font-size: 1.2rem;
-    display: block;
-    padding-bottom: 2rem;
-  }
-  .project-btn {
-    bottom: -6rem;
-  }
-}
-@media (max-width: 525px) {
-  .header-content p,
-  .header-content-about p,
-  .project p {
-    height: 12rem;
-    font-size: 0.8rem;
-    display: block;
-    padding-bottom: 2rem;
-  }
-  .btn {
-    font-size: 0.5rem;
-  }
-  .control-btn {
-    margin-top: 6rem;
-    padding: 1rem;
-  }
-  video {
-    visibility: hidden;
-  }
-}
-@media (max-width: 425px) {
-  .project h3 {
-    font-size: 1rem;
-  }
-  .header-content h1,
-  .header-content-about h1 {
-    font-size: 2rem;
-  }
-  .project h1 {
-    font-size: 1.5rem;
-  }
-  .header-content p,
-  .header-content-about p,
-  .project p {
-    height: 8rem;
-    font-size: 0.8rem;
-    display: block;
-    padding-bottom: 2rem;
-  }
-  .btn {
-    font-size: 0.5rem;
-    padding: 1rem;
-  }
-  .about-icon {
-    font-size: 2rem;
-  }
-  .header-content-about {
-    position: relative;
-    top: -100px;
-  }
-  .projects {
-    position: relative;
-    top: -100px;
-  }
-  .control-btn {
-    margin-top: 6rem;
-    padding: 0.8rem;
-  }
-  .header-content-about .btn {
-    position: relative;
-    bottom: -120px;
-  }
-  video {
-    visibility: hidden;
-  }
-}
-@media (max-width: 400px) {
-  .btn {
-    padding: 0.5;
-  }
+
+ul.control li a {
+  background-color: #cccccc;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
 }

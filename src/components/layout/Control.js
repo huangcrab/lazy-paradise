@@ -24,28 +24,34 @@ class Control extends Component {
         {value => {
           const { dispatch } = value;
           return (
-            <div>
-              <a
-                className="btn control-prev control-btn"
-                id="prev-demo"
-                onClick={this.onDemoClick.bind(this, dispatch)}
-              >
-                Demos
-              </a>
-              <a
-                className="btn control-btn"
-                onClick={this.onExitClick.bind(this, dispatch)}
-              >
-                X
-              </a>
-              <a
-                className="btn control-next control-btn"
-                id="next-demo"
-                onClick={this.onProjectClick.bind(this, dispatch)}
-              >
-                Projects
-              </a>
-            </div>
+            <ul className="control">
+              <li>
+                <a
+                  className="btn control-prev control-btn"
+                  id="prev-demo"
+                  onClick={this.onDemoClick.bind(this, dispatch)}
+                >
+                  Demos
+                </a>
+              </li>
+              <li>
+                <a
+                  className="btn control-btn"
+                  onClick={this.onExitClick.bind(this, dispatch)}
+                >
+                  X
+                </a>
+              </li>
+              <li>
+                <a
+                  className="btn control-next control-btn"
+                  id="next-demo"
+                  onClick={this.onProjectClick.bind(this, dispatch)}
+                >
+                  Projects
+                </a>
+              </li>
+            </ul>
           );
         }}
       </Consumer>

@@ -5,10 +5,10 @@ import ItemControl from "../../components/layout/ItemControl";
 class Projects extends Component {
   render() {
     return (
-      <div>
+      <section className="section projects">
         <Project />
         <ItemControl name={"Project"} />
-      </div>
+      </section>
     );
   }
 }

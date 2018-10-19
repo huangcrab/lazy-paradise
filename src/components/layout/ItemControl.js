@@ -24,29 +24,35 @@ class ItemControl extends Component {
         {value => {
           const { name, dispatch } = value;
           return (
-            <div>
-              <a
-                className="btn control-prev control-btn"
-                id="prev-demo"
-                onClick={this.onPrevClick.bind(this, dispatch)}
-              >
-                Prev {name}
-              </a>
-              <a
-                className="btn control-btn"
-                id="close-demo"
-                onClick={this.onExitClick.bind(this, dispatch)}
-              >
-                X
-              </a>
-              <a
-                className="btn control-next control-btn"
-                id="next-demo"
-                onClick={this.onNextClick.bind(this, dispatch)}
-              >
-                Next {name}
-              </a>
-            </div>
+            <ul className="control">
+              <li>
+                <a
+                  className="btn control-prev control-btn"
+                  id="prev-demo"
+                  onClick={this.onPrevClick.bind(this, dispatch)}
+                >
+                  Prev {name}
+                </a>
+              </li>
+              <li>
+                <a
+                  className="btn control-btn"
+                  id="close-demo"
+                  onClick={this.onExitClick.bind(this, dispatch)}
+                >
+                  X
+                </a>
+              </li>
+              <li>
+                <a
+                  className="btn control-next control-btn"
+                  id="next-demo"
+                  onClick={this.onNextClick.bind(this, dispatch)}
+                >
+                  Next {name}
+                </a>
+              </li>
+            </ul>
           );
         }}
       </Consumer>
