@@ -1,60 +1,55 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Consumer } from "../../context";
 
 class Control extends Component {
-  onProjectClick = dispatch => {
-    dispatch({
-      type: "SHOW_PROJECT"
-    });
-  };
-  onDemoClick = dispatch => {
-    dispatch({
-      type: "SHOW_DEMO"
-    });
-  };
-  onExitClick = dispatch => {
-    dispatch({
-      type: "MAIN_PAGE"
-    });
-  };
-
   render() {
+    const { pathname } = this.props.path;
+
+    const target = {
+      name: "",
+      path: ""
+    };
+    switch (pathname) {
+      case "/intro":
+        target.name = "Home";
+        target.path = "/";
+        break;
+      case "/":
+        target.name = "About Me";
+        target.path = "/intro";
+        break;
+      default:
+        break;
+    }
     return (
-      <Consumer>
-        {value => {
-          const { dispatch } = value;
-          return (
-            <ul className="control">
-              <li>
-                <a
-                  className="btn control-prev control-btn"
-                  id="prev-demo"
-                  onClick={this.onDemoClick.bind(this, dispatch)}
-                >
-                  Demos
-                </a>
-              </li>
-              <li>
-                <a
-                  className="btn control-btn"
-                  onClick={this.onExitClick.bind(this, dispatch)}
-                >
-                  X
-                </a>
-              </li>
-              <li>
-                <a
-                  className="btn control-next control-btn"
-                  id="next-demo"
-                  onClick={this.onProjectClick.bind(this, dispatch)}
-                >
-                  Projects
-                </a>
-              </li>
-            </ul>
-          );
-        }}
-      </Consumer>
+      <ul className="control">
+        <li>
+          <Link
+            to="/demos"
+            className="btn control-prev control-btn"
+            id="prev-demo"
+            onClick={this.onDemoClick}
+          >
+            Demos
+          </Link>
+        </li>
+        <li>
+          <Link to={target.path} className="btn control-btn">
+            {target.name}
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/projects"
+            className="btn control-next control-btn"
+            id="next-demo"
+            onClick={this.onProjectClick}
+          >
+            Projects
+          </Link>
+        </li>
+      </ul>
     );
   }
 }

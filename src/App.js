@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Loading from "./components/layout/Loading";
+import Intro from "./components/intro/Intro";
 import Landing from "./components/landing/Landing";
 import Demos from "./components/demo/Demos";
 import Projects from "./components/projects/Projects";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import { Provider } from "./context";
 
@@ -24,10 +27,35 @@ class App extends Component {
   render() {
     return (
       <Provider>
-        <div className="App">
-          {/* <Demos /> */}
-          <Projects />
-        </div>
+        <Router>
+          <div className="App">
+            <Route
+              render={({ location }) => (
+                <TransitionGroup
+                  className="item-container"
+                  childFactory={child =>
+                    React.cloneElement(child, {
+                      classNames: "fade"
+                    })
+                  }
+                >
+                  <CSSTransition
+                    key={location.key}
+                    timeout={1000}
+                    classNames="fade"
+                  >
+                    <Switch location={location}>
+                      <Route exact path="/" component={Landing} />
+                      <Route exact path="/intro" component={Intro} />
+                      <Route exact path="/demos" component={Demos} />
+                      <Route exact path="/projects" component={Projects} />
+                    </Switch>
+                  </CSSTransition>
+                </TransitionGroup>
+              )}
+            />
+          </div>
+        </Router>
       </Provider>
     );
   }

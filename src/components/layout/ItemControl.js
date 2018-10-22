@@ -1,20 +1,24 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 class ItemControl extends Component {
-  onNextClick = dispatch => {
+  onNextClick = (dispatch, length) => {
     dispatch({
-      type: "NEXT_ITEM"
+      type: "NEXT_ITEM",
+      payload: length
     });
   };
-  onPrevClick = dispatch => {
+  onPrevClick = (dispatch, length) => {
     dispatch({
-      type: "PREV_ITEM"
+      type: "PREV_ITEM",
+      payload: length
     });
   };
   onExitClick = dispatch => {
     dispatch({
-      type: "MAIN_PAGE"
+      type: "CLEAR_INDEX"
     });
   };
 
@@ -22,32 +26,35 @@ class ItemControl extends Component {
     return (
       <Consumer>
         {value => {
-          const { name, dispatch } = value;
+          const { dispatch } = value;
+          const { name, length } = this.props;
           return (
             <ul className="control">
               <li>
                 <a
                   className="btn control-prev control-btn"
                   id="prev-demo"
-                  onClick={this.onPrevClick.bind(this, dispatch)}
+                  onClick={this.onPrevClick.bind(this, dispatch, length)}
                 >
                   Prev {name}
                 </a>
               </li>
+
               <li>
-                <a
+                <Link
+                  to="/"
                   className="btn control-btn"
                   id="close-demo"
                   onClick={this.onExitClick.bind(this, dispatch)}
                 >
                   X
-                </a>
+                </Link>
               </li>
               <li>
                 <a
                   className="btn control-next control-btn"
                   id="next-demo"
-                  onClick={this.onNextClick.bind(this, dispatch)}
+                  onClick={this.onNextClick.bind(this, dispatch, length)}
                 >
                   Next {name}
                 </a>
@@ -59,5 +66,10 @@ class ItemControl extends Component {
     );
   }
 }
+
+ItemControl.propTypes = {
+  name: PropTypes.string.isRequired,
+  length: PropTypes.number.isRequired
+};
 
 export default ItemControl;

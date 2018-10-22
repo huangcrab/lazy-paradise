@@ -182,35 +182,57 @@ body {
 }
 /*React Transition*/
 /*appear - on page load*/
-.fade-appear {
-  opacity: 0;
-  z-index: 1;
-}
-.fade-appear.fade-appear-active {
-  opacity: 1;
-  transition: opacity 300ms linear;
-}
-
-/* enter */
 .fade-enter {
   opacity: 0;
   z-index: 1;
 }
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 1000ms linear 1000ms;
+  transition: opacity 500ms linear 500ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms linear;
+}
+
+/* enter */
+.left-enter {
+  transform: translate(0);
+}
+.left-enter.left-enter-active {
+  transform: translate(120%);
+  transition: transform 500ms linear;
 }
 
 /* exit */
-.fade-exit {
-  left: 0;
+.left-exit {
+  transform: translate(-120%);
 }
-.fade-exit.fade-exit-active {
-  left: 100vw;
-  transition: left 1000ms linear;
+.left-exit.left-exit-active {
+  transform: translate(0);
+  transition: transform 500ms linear;
 }
-.fade-exit-done {
-  opacity: 0;
+
+/* enter */
+.right-enter {
+  transform: translate(120%);
+}
+.right-enter.right-enter-active {
+  transform: translate(0);
+  transition: transform 500ms linear;
+}
+
+/* exit */
+.right-exit {
+  transform: translate(0);
+}
+.right-exit.right-exit-active {
+  transform: translate(-120%);
+  transition: transform 500ms linear;
 }
 
 .item-container {
@@ -234,6 +256,7 @@ body {
   height: 100vh;
   width: 100vw;
   position: absolute;
+  overflow: hidden;
 }
 .control {
   position: relative;

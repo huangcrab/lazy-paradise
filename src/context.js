@@ -6,16 +6,21 @@ const Reducer = (state, action) => {
     case "NEXT_ITEM":
       return {
         ...state,
-        index: state.index >= state.items.length - 1 ? 0 : state.index + 1,
+        index: state.index >= action.payload - 1 ? 0 : state.index + 1,
         direction: "right"
       };
     case "PREV_ITEM":
       return {
         ...state,
-        index: state.index <= 0 ? state.items.length - 1 : state.index - 1,
+        index: state.index <= 0 ? action.payload - 1 : state.index - 1,
         direction: "left"
       };
-
+    case "CLEAR_INDEX":
+      return {
+        ...state,
+        index: 0,
+        direction: ""
+      };
     default:
       return state;
   }
@@ -23,25 +28,27 @@ const Reducer = (state, action) => {
 
 export class Provider extends Component {
   state = {
-    items: [
-      // {
-      //   id: 1,
-      //   name: "Authentication App",
-      //   link: "https://warm-island-73436.herokuapp.com/",
-      //   tech: ["Angular", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
-      // },
-      // {
-      //   id: 2,
-      //   name: "Connector App",
-      //   link: "https://limitless-beach-24902.herokuapp.com/",
-      //   tech: ["React", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
-      // },
-      // {
-      //   id: 3,
-      //   name: "Client Panel App",
-      //   link: "https://clientpanel-3bd53.firebaseapp.com/",
-      //   tech: ["Angular", "Firebase", "Bootstrap"]
-      // }
+    demos: [
+      {
+        id: 1,
+        name: "Authentication App",
+        link: "https://warm-island-73436.herokuapp.com/",
+        tech: ["Angular", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+      },
+      {
+        id: 2,
+        name: "Connector App",
+        link: "https://limitless-beach-24902.herokuapp.com/",
+        tech: ["React", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+      },
+      {
+        id: 3,
+        name: "Client Panel App",
+        link: "https://clientpanel-3bd53.firebaseapp.com/",
+        tech: ["Angular", "Firebase", "Bootstrap"]
+      }
+    ],
+    projects: [
       {
         id: 1,
         name: "Authentication App",

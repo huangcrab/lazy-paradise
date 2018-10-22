@@ -4,7 +4,7 @@ import Control from "../../components/layout/Control";
 class Intro extends Component {
   render() {
     return (
-      <div class="header-content-about">
+      <div class="section">
         <h1>About Me</h1>
         <a href="https://github.com/huangcrab">
           <i class="about-icon fab fa-github" />
@@ -26,7 +26,7 @@ class Intro extends Component {
           environments. While thriving in challenging environments, I bring an
           exceptional set of skills guided by strong work ethics.
         </p>
-        <Control />
+        <Control path={this.props.location} />
       </div>
     );
   }

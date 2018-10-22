@@ -3,7 +3,7 @@ import Control from "../../components/layout/Control";
 class Landing extends Component {
   render() {
     return (
-      <div class="header-content">
+      <div class="section">
         <img src="assets/x_blue.png" alt="X" />
         <h1 class="gradient1">Welcome to "Lazy Paradise"</h1>
         <p>
@@ -12,7 +12,7 @@ class Landing extends Component {
           the "Laziness" here simply means being
           <strong>creative</strong> to facilitate people’s life!
         </p>
-        <Control />
+        <Control path={this.props.location} />
       </div>
     );
   }
