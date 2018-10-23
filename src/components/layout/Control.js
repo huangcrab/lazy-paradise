@@ -25,12 +25,7 @@ class Control extends Component {
     return (
       <ul className="control">
         <li>
-          <Link
-            to="/demos"
-            className="btn control-prev control-btn"
-            id="prev-demo"
-            onClick={this.onDemoClick}
-          >
+          <Link to="/demos" onClick={this.onDemoClick}>
             Demos
           </Link>
         </li>
@@ -40,12 +35,7 @@ class Control extends Component {
           </Link>
         </li>
         <li>
-          <Link
-            to="/projects"
-            className="btn control-next control-btn"
-            id="next-demo"
-            onClick={this.onProjectClick}
-          >
+          <Link to="/projects" onClick={this.onProjectClick}>
             Projects
           </Link>
         </li>

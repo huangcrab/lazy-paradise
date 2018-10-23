@@ -21,7 +21,7 @@ class Project extends Component {
           timeout={500}
           classNames={direction === "right" ? "right" : "left"}
         >
-          <div className="display-item item">
+          <div className="item">
             <h1>
               {index + 1} / {items.length}
               <br />

@@ -32,7 +32,6 @@ class App extends Component {
             <Route
               render={({ location }) => (
                 <TransitionGroup
-                  className="item-container"
                   childFactory={child =>
                     React.cloneElement(child, {
                       classNames: "fade"

@@ -31,31 +31,18 @@ class ItemControl extends Component {
           return (
             <ul className="control">
               <li>
-                <a
-                  className="btn control-prev control-btn"
-                  id="prev-demo"
-                  onClick={this.onPrevClick.bind(this, dispatch, length)}
-                >
+                <a onClick={this.onPrevClick.bind(this, dispatch, length)}>
                   Prev {name}
                 </a>
               </li>
 
               <li>
-                <Link
-                  to="/"
-                  className="btn control-btn"
-                  id="close-demo"
-                  onClick={this.onExitClick.bind(this, dispatch)}
-                >
+                <Link to="/" onClick={this.onExitClick.bind(this, dispatch)}>
                   X
                 </Link>
               </li>
               <li>
-                <a
-                  className="btn control-next control-btn"
-                  id="next-demo"
-                  onClick={this.onNextClick.bind(this, dispatch, length)}
-                >
+                <a onClick={this.onNextClick.bind(this, dispatch, length)}>
                   Next {name}
                 </a>
               </li>

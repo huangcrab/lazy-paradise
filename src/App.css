@@ -169,7 +169,20 @@ body {
   background-color: black;
   color: white;
 }
+.btn:hover {
+  cursor: cell;
+}
 
+span {
+  color: #df541d;
+}
+.main h1 {
+  font-family: "knewave", cursive;
+  margin: 10px;
+}
+p {
+  font-family: "Mali", cursive;
+}
 #particle-js {
   overflow: hidden;
   height: 100vh;
@@ -276,4 +289,23 @@ ul.control li a {
   display: inline-block;
   margin: 5px;
   padding: 5px;
+}
+
+.about-icon {
+  font-size: 40px;
+  color: #6dafec;
+  padding-left: 1rem;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.main p strong {
+  color: #e42626;
+  text-transform: uppercase;
+}
+
+.item h3 {
+  margin: 5px;
 }
