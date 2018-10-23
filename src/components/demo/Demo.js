@@ -25,21 +25,27 @@ class Demo extends Component {
               Demo {index + 1} / {items.length}
             </h3>
             <div className="icon-group">
-              <img title="Angular" src="assets/angular.png" />
-              <img title="MongoDB" src="assets/mongodb.png" />
-              <img title="Note.js" src="assets/node-dot-js.png" />
-              <img title="bootstrap" src="assets/bootstrap.png" />
-              <img title="heroku" src="assets/heroku.png" />
-              <img title="mlab" src="assets/mlab.png" />
+              <img alt="Angular" title="Angular" src="assets/angular.png" />
+              <img alt="MongoDB" itle="MongoDB" src="assets/mongodb.png" />
+              <img alt="NodeJS" title="NodeJS" src="assets/node-dot-js.png" />
+              <img
+                alt="Bootstrap"
+                title="Bootstrap"
+                src="assets/bootstrap.png"
+              />
+              <img alt="Heroku" title="Heroku" src="assets/heroku.png" />
+              <img alt="MLab" title="MLab" src="assets/mlab.png" />
             </div>
             <br />
             <div className="wrapper">
-              <iframe className="scaled-frame" src="" />
               <a
                 className="frame-overlay"
                 target="_blank"
+                rel="noopener noreferrer"
                 href={items[index].link}
-              />
+              >
+                {" "}
+              </a>
             </div>
           </div>
         </CSSTransition>

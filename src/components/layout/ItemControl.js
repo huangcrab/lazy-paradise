@@ -31,9 +31,9 @@ class ItemControl extends Component {
           return (
             <ul className="control">
               <li>
-                <a onClick={this.onPrevClick.bind(this, dispatch, length)}>
+                <button onClick={this.onPrevClick.bind(this, dispatch, length)}>
                   Prev {name}
-                </a>
+                </button>
               </li>
 
               <li>
@@ -42,9 +42,9 @@ class ItemControl extends Component {
                 </Link>
               </li>
               <li>
-                <a onClick={this.onNextClick.bind(this, dispatch, length)}>
+                <button onClick={this.onNextClick.bind(this, dispatch, length)}>
                   Next {name}
-                </a>
+                </button>
               </li>
             </ul>
           );

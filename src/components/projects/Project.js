@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import PropTypes from "prop-types";
-import Transition from "../transition";
-import { SlideLeft, SlideRight } from "../transition";
 
 class Project extends Component {
   render() {

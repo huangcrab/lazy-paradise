@@ -284,7 +284,8 @@ ul.control li {
   display: inline;
 }
 
-ul.control li a {
+ul.control li a,
+ul.control li button {
   background-color: #cccccc;
   display: inline-block;
   margin: 5px;

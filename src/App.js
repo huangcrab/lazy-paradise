@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Loading from "./components/layout/Loading";
 import Intro from "./components/intro/Intro";
 import Landing from "./components/landing/Landing";
 import Demos from "./components/demo/Demos";
@@ -19,7 +18,7 @@ class App extends Component {
     const tpl2 =
       "background-color:black; border:1px solid black; font-size:10px; font-weight: bold;padding:3px 5px;color:";
     console.log(
-      "%c⚡Developed By" + `%clazyparadise.com⚡`,
+      `%c⚡Developed By%clazyparadise.com⚡`,
       tpl + "black",
       tpl2 + "orange"
     );
