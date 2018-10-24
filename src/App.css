@@ -179,12 +179,52 @@ span {
 }
 
 .main h1 {
-  font-family: "knewave", cursive;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 20px 0;
 }
+/*---------------------- Gradient -----------------------*/
+.gradient1 {
+  background: #000000;
+  color: black;
+  position: relative;
+  text-shadow: 1px 1px 0px #000000, 1px -1px 0px #000000, -1px -1px 0px #000000,
+    -1px 1px 0px #000000;
+}
+.gradient1::before,
+.gradient1::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+.gradient1::before {
+  background: linear-gradient(
+    to right,
+    #27328e,
+    #faaa54,
+    #e23b4a,
+    #db0768,
+    #360670
+  );
+  content: "";
+  display: block;
+  mix-blend-mode: screen;
+}
+.gradient1::after {
+  content: 'Welcome to "Lazy Paradise"';
+  background: #000000;
+  color: white;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+/* ---------------------- Gradient ----------------------- */
+
 p {
   font-family: "Mali", cursive;
   font-size: 15px;
+  line-height: 25px;
 }
 #particle-js {
   overflow: hidden;
@@ -217,19 +257,19 @@ p {
 
 /* enter */
 .left-enter {
-  transform: translate(0);
+  transform: translate(-120%);
 }
 .left-enter.left-enter-active {
-  transform: translate(120%);
+  transform: translate(0%);
   transition: transform 500ms linear;
 }
 
 /* exit */
 .left-exit {
-  transform: translate(-120%);
+  transform: translate(0%);
 }
 .left-exit.left-exit-active {
-  transform: translate(0);
+  transform: translate(120%);
   transition: transform 500ms linear;
 }
 
@@ -258,7 +298,6 @@ p {
 }
 
 .item {
-  z-index: -99;
   text-align: center;
   margin: 0 auto;
   color: white;
@@ -268,6 +307,8 @@ p {
   max-height: 60vh;
   width: 80%;
 }
+
+
 .section {
   height: 100vh;
   width: 100vw;
@@ -288,7 +329,7 @@ ul.control li {
 }
 
 ul.control li a,
-ul.control li .btn {
+.btn {
   display: inline-block;
   margin: 5px;
   padding: 5px;
@@ -307,7 +348,8 @@ ul.control li .btn {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 30px;
+  line-height: 45px;
 }
 
 .main p strong {

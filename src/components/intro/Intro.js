@@ -1,7 +1,21 @@
 import React, { Component } from "react";
 import Control from "../../components/layout/Control";
-
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import Skills from "./Skill";
+import About from "./About";
 class Intro extends Component {
+  state = {
+    name: "SKILLS",
+    content: 0,
+    components: [<About />, <Skills />]
+  };
+  switchView = () => {
+    const index = this.state.content;
+    this.setState({
+      content: index === 0 ? 1 : 0,
+      name: this.state.content === 0 ? "SKILLS" : "ABOUT ME"
+    });
+  };
   render() {
     return (
       <div className="section about">
@@ -27,16 +41,20 @@ class Intro extends Component {
                 <i className="about-icon fa fa-envelope" />
               </a>
             </div>
-
-            <p>
-              I am an extreme fast-learner who is able to work under pressure to
-              deliver desired results within allocated time frame. Highly
-              skilled in software problems diagnosis and effective solutions
-              development. Able to communicate proficiently, and comfortable
-              working in diversified environments. While thriving in challenging
-              environments, I bring an exceptional set of skills guided by
-              strong work ethics.
-            </p>
+            <TransitionGroup>
+              <CSSTransition
+                key={this.state.content}
+                timeout={100}
+                classNames={"fade"}
+              >
+                <div className="info-section">
+                  {this.state.components[this.state.content]}
+                </div>
+              </CSSTransition>
+            </TransitionGroup>
+            <div className="btn info-btn" onClick={this.switchView.bind(this)}>
+              {this.state.name}
+            </div>
           </div>
         </div>
         <Control path={this.props.location} />

@@ -10,15 +10,11 @@ class Project extends Component {
         className="item-container"
         childFactory={child =>
           React.cloneElement(child, {
-            classNames: direction === "right" ? "right" : "left"
+            classNames: direction
           })
         }
       >
-        <CSSTransition
-          key={index}
-          timeout={500}
-          classNames={direction === "right" ? "right" : "left"}
-        >
+        <CSSTransition key={index} timeout={500} classNames={direction}>
           <div className="item">
             <h1>
               {index + 1} / {items.length}

@@ -12,7 +12,7 @@ const Reducer = (state, action) => {
     case "PREV_ITEM":
       return {
         ...state,
-        index: state.index <= 0 ? action.payload - 1 : state.index - 1,
+        index: state.index === 0 ? action.payload - 1 : state.index - 1,
         direction: "left"
       };
     case "CLEAR_INDEX":
