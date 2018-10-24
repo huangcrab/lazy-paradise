@@ -31,9 +31,12 @@ class ItemControl extends Component {
           return (
             <ul className="control">
               <li>
-                <button onClick={this.onPrevClick.bind(this, dispatch, length)}>
+                <div
+                  className="btn"
+                  onClick={this.onPrevClick.bind(this, dispatch, length)}
+                >
                   Prev {name}
-                </button>
+                </div>
               </li>
 
               <li>
@@ -42,9 +45,12 @@ class ItemControl extends Component {
                 </Link>
               </li>
               <li>
-                <button onClick={this.onNextClick.bind(this, dispatch, length)}>
+                <div
+                  className="btn"
+                  onClick={this.onNextClick.bind(this, dispatch, length)}
+                >
                   Next {name}
-                </button>
+                </div>
               </li>
             </ul>
           );

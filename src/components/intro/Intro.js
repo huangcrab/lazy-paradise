@@ -8,23 +8,26 @@ class Intro extends Component {
         <div className="item-container">
           <div className="item">
             <h1>About Me</h1>
-            <a
-              href="https://github.com/huangcrab"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <i className="about-icon fab fa-github" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/xie-huang-a2b3baa2/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="about-icon fab fa-linkedin" />
-            </a>
-            <a href="mailto:seanhuang129@gmail.com">
-              <i className="about-icon fa fa-envelope" />
-            </a>
+            <div className="social">
+              <a
+                href="https://github.com/huangcrab"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i className="about-icon fab fa-github" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/xie-huang-a2b3baa2/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="about-icon fab fa-linkedin" />
+              </a>
+              <a href="mailto:seanhuang129@gmail.com">
+                <i className="about-icon fa fa-envelope" />
+              </a>
+            </div>
+
             <p>
               I am an extreme fast-learner who is able to work under pressure to
               deliver desired results within allocated time frame. Highly

@@ -24,7 +24,7 @@ class Control extends Component {
     return (
       <ul className="control">
         <li>
-          <Link to="/demos" onClick={this.onDemoClick}>
+          <Link to="/demos" onClick={this.onDemoClick} className="orange">
             Demos
           </Link>
         </li>

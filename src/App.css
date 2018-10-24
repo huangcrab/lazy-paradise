@@ -169,19 +169,22 @@ body {
   background-color: black;
   color: white;
 }
-.btn:hover {
+.btn:hover,
+a:hover {
   cursor: cell;
 }
 
 span {
   color: #df541d;
 }
+
 .main h1 {
   font-family: "knewave", cursive;
-  margin: 10px;
+  margin: 20px 0;
 }
 p {
   font-family: "Mali", cursive;
+  font-size: 15px;
 }
 #particle-js {
   overflow: hidden;
@@ -251,7 +254,7 @@ p {
 .item-container {
   position: relative;
   margin: 0 auto;
-  top: 20%;
+  top: 10%;
 }
 
 .item {
@@ -285,11 +288,16 @@ ul.control li {
 }
 
 ul.control li a,
-ul.control li button {
-  background-color: #cccccc;
+ul.control li .btn {
   display: inline-block;
   margin: 5px;
   padding: 5px;
+  background-color: #0c3b94;
+  color: #fff;
+  font-size: 12px;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .about-icon {
@@ -309,4 +317,11 @@ h1 {
 
 .item h3 {
   margin: 5px;
+}
+ul.control li .orange {
+  background-color: #e42626;
+}
+
+.social {
+  margin: 20px 0;
 }

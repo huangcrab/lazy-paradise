@@ -12,7 +12,7 @@ class Landing extends Component {
               "Laziness" can be a key of future development, the "Laziness" here
               does not mean the quality of being unwilling to work or use
               energy, the "Laziness" here simply means being
-              <strong> Creative </strong>
+              <strong> creative </strong>
               to facilitate people’s life!
             </p>
           </div>
