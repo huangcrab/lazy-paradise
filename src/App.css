@@ -220,7 +220,6 @@ span {
   z-index: 1;
 }
 /* ---------------------- Gradient ----------------------- */
-
 p {
   font-family: "Mali", cursive;
   font-size: 15px;
@@ -237,24 +236,6 @@ p {
   opacity: 0.5;
 }
 /*React Transition*/
-/*appear - on page load*/
-.fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms linear 500ms;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-.fade-exit.fade-exit-active {
-  opacity: 0;
-  transition: opacity 500ms linear;
-}
-
 /* enter */
 .left-enter {
   transform: translate(-120%);
@@ -263,7 +244,6 @@ p {
   transform: translate(0%);
   transition: transform 500ms linear;
 }
-
 /* exit */
 .left-exit {
   transform: translate(0%);
@@ -272,7 +252,6 @@ p {
   transform: translate(120%);
   transition: transform 500ms linear;
 }
-
 /* enter */
 .right-enter {
   transform: translate(120%);
@@ -281,7 +260,6 @@ p {
   transform: translate(0);
   transition: transform 500ms linear;
 }
-
 /* exit */
 .right-exit {
   transform: translate(0);
@@ -290,13 +268,11 @@ p {
   transform: translate(-120%);
   transition: transform 500ms linear;
 }
-
 .item-container {
   position: relative;
   margin: 0 auto;
   top: 10%;
 }
-
 .item {
   text-align: center;
   margin: 0 auto;
@@ -307,8 +283,6 @@ p {
   max-height: 60vh;
   width: 80%;
 }
-
-
 .section {
   height: 100vh;
   width: 100vw;
@@ -323,11 +297,9 @@ p {
   z-index: 99;
   margin-top: 80vh;
 }
-
 ul.control li {
   display: inline;
 }
-
 ul.control li a,
 .btn {
   display: inline-block;
@@ -340,30 +312,31 @@ ul.control li a,
   text-decoration: none;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .about-icon {
   font-size: 40px;
   color: #6dafec;
   padding-left: 1rem;
 }
-
 h1 {
   font-size: 30px;
   line-height: 45px;
 }
-
 .main p strong {
   color: #e42626;
   text-transform: uppercase;
 }
-
 .item h3 {
   margin: 5px;
 }
 ul.control li .orange {
   background-color: #e42626;
 }
-
 .social {
   margin: 20px 0;
+}
+.info-btn {
+  margin-top: 220px;
+}
+.field ul {
+  list-style: none;
 }
