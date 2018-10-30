@@ -220,6 +220,7 @@ span {
   z-index: 1;
 }
 /* ---------------------- Gradient ----------------------- */
+h3,
 p {
   font-family: "Mali", cursive;
   font-size: 15px;
@@ -236,6 +237,25 @@ p {
   opacity: 0.5;
 }
 /*React Transition*/
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms linear 500ms;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms linear;
+}
+
 /* enter */
 .left-enter {
   transform: translate(-120%);
@@ -338,5 +358,36 @@ ul.control li .orange {
   margin-top: 220px;
 }
 .field ul {
-  list-style: none;
+  border-right: 2px solid blue;
+}
+.icon-group {
+  background: white;
+  opacity: 0.8;
+  display: inline;
+  padding: 30px 10px 0px 10px;
+  border-radius: 15px;
+}
+.icon-group img {
+  margin: 5px;
+  zoom: 0.9;
+}
+
+.demo-link {
+  position: absolute;
+  background: #0c3b94;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.demo-link:hover {
+  opacity: 0.5;
+  transition: opacity 1s;
+}
+.wrapper {
+  position: relative;
+  width: auto;
+  height: 200px;
+  margin: 10px auto;
 }

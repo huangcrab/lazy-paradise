@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Control from "../../components/layout/Control";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import Skills from "./Skill";
 import About from "./About";
@@ -18,26 +17,6 @@ const Item = styled.div`
   left: 0;
   right: 0;
   overflow-y: scroll;
-`;
-
-const Global = createGlobalStyle`
-${props =>
-  `.fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity ${props.time}ms linear ${props.time}ms};
-}
-
-.fade-exit {
-  opacity: 1;
-}
-.fade-exit.fade-exit-active {
-  opacity: 0;
-  transition: opacity ${props.time}ms linear};
-}`}
 `;
 
 class Intro extends Component {
@@ -57,7 +36,6 @@ class Intro extends Component {
     });
   };
   render() {
-    const timeout = 500;
     return (
       <div className="section about">
         <div className="item-container">
@@ -82,12 +60,11 @@ class Intro extends Component {
                 <i className="about-icon fa fa-envelope" />
               </a>
             </div>
-            <Global time={timeout} />
             <Container className="info-section">
               <TransitionGroup>
                 <CSSTransition
                   key={this.state.content}
-                  timeout={timeout}
+                  timeout={1000}
                   classNames={"fade"}
                 >
                   <Item>{this.state.components[this.state.content].load}</Item>

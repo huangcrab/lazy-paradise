@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import PropTypes from "prop-types";
+import uuid from "uuid";
 
 class Demo extends Component {
   render() {
@@ -23,21 +24,22 @@ class Demo extends Component {
               Demo {index + 1} / {items.length}
             </h3>
             <div className="icon-group">
-              <img alt="Angular" title="Angular" src="assets/angular.png" />
-              <img alt="MongoDB" itle="MongoDB" src="assets/mongodb.png" />
-              <img alt="NodeJS" title="NodeJS" src="assets/node-dot-js.png" />
-              <img
-                alt="Bootstrap"
-                title="Bootstrap"
-                src="assets/bootstrap.png"
-              />
-              <img alt="Heroku" title="Heroku" src="assets/heroku.png" />
-              <img alt="MLab" title="MLab" src="assets/mlab.png" />
+              {items[index].tech.map(tech => {
+                return (
+                  <img
+                    key={uuid()}
+                    alt={tech}
+                    title={tech}
+                    src={`assets/logos/${tech.toLowerCase()}.png`}
+                  />
+                );
+              })}
             </div>
             <br />
             <div className="wrapper">
+              <iframe class="scaled-frame" src={items[index].link} />
               <a
-                className="frame-overlay"
+                className="demo-link"
                 target="_blank"
                 rel="noopener noreferrer"
                 href={items[index].link}

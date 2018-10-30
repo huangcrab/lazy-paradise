@@ -33,13 +33,13 @@ export class Provider extends Component {
         id: 1,
         name: "Authentication App",
         link: "https://warm-island-73436.herokuapp.com/",
-        tech: ["Angular", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+        tech: ["Angular", "MongoDB", "NodeJs", "Bootstrap", "Heroku", "MLab"]
       },
       {
         id: 2,
         name: "Connector App",
         link: "https://limitless-beach-24902.herokuapp.com/",
-        tech: ["React", "MongoDB", "Node.js", "Bootstrap", "Heroku", "MLab"]
+        tech: ["React", "MongoDB", "NodeJs", "Bootstrap", "Heroku", "MLab"]
       },
       {
         id: 3,
