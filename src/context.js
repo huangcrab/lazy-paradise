@@ -54,39 +54,70 @@ export class Provider extends Component {
     projects: [
       {
         id: 1,
-        name: "Authentication App",
-        date: "Aug 16",
-        description: `ML Analyzer is a desktop application traverse the XML file generated from IBM Process Designer.
-      Make the
-      debug in IBM Process Designer at least 100 times faster, it can locate logic and syntax errors in
-      thousands
-      of processes in couple minutes, it also outputs the error logs with all the details of all the
-      processes
-      in the file.`
+        name: "XMLtoVisio Converter - JAVA",
+        date: "June 2017",
+        description: `Xml to Visio Converter is a desktop application that generates thousands of Microsoft Visio files
+        from XML
+        file in less than a minutes, it traverse the xml file and translate it into Visio XML syntax,
+        outputs
+        them into .vsdx file, it’s able to create all the predefined shapes, links, and also hyper links
+        into
+        Visio files. It turns months of documentation work into a piece of cake.`
       },
       {
         id: 2,
-        name: "22222222222",
-        date: "Aug 18",
-        description: `ML Analyzer is a desktop application traverse the XML file generated from IBM Process Designer.
-      Make the
-      debug in IBM Processs Designer at least 100 times faster, it can locate logic and syntax errors in
-      thousands
-      of processes in couple minutes, it also outputs the error logs with all the details of all the
-      processes
-      in the file.`
+        name: "Production Website",
+        date: "Sept 2017",
+        description: `A single page website for a Chinese immigration company, it uses multiple JavaScript libraries and
+        Bootstrap,
+        Animate.css to create some scrolling effects and animations. It has a contact form communicated
+        with
+        the firebase.`
       },
       {
         id: 3,
-        name: "333333333",
-        date: "Aug 19",
-        description: `ML Analyzer is a desktop application traverse the XML file generated from IBM Process Designer.
-      Make the
-      debug in IBM Process Designer at least 100 times faster, it can locate logic and syntax errors in
-      thousands
-      of processes in couple minutes, it also outputs the error logs with all the details of all the
-      processes
-      in the file.`
+        name: "PokePixel - IOS",
+        date: "Aug 2016",
+        description: `PokePixel is a multi-page IOS app that calculates the IV and evolve value of a Pokémon from Pokemon
+        GO, it
+        takes the user input value outputs the perfect percentage of a Pokémon, so the player knows which
+        Pokémon
+        they should keep and invest on. It presents a collectionView of all the Pokémon’s, user can search
+        the
+        Pokémon by input the name or the id of the Pokemon.`
+      },
+      {
+        id: 4,
+        name: "XML Analyzer - JAVA",
+        date: "Aug 2016",
+        description: `XML Analyzer is a desktop application traverse the XML file generated from IBM Process Designer.
+        Make the
+        debug in IBM Process Designer at least 100 times faster, it can locate logic and syntax errors in
+        thousands
+        of processes in couple minutes, it also outputs the error logs with all the details of all the
+        processes
+        in the file.`
+      },
+      {
+        id: 5,
+        name: "URL Converter - JAVA",
+        date: "Jan 2016",
+        description: `URL Converter is a simple desktop application that encode and decodes a base64 coded website
+        link, the
+        application also can built links by specifying a list of fields and values. It saves the personal
+        favorite
+        links, so user can quickly load the previous made link by one click and launch it into web browser.`
+      },
+      {
+        id: 6,
+        name: "TeleCom ColorCode Calculator - Android",
+        date: "March 2015",
+        description: `An single view Android app calculates the telecommunication color code, automatically translate the
+        line
+        number to a color code(tip side color and ring side color) of the cable at the moment of typing,
+        and
+        vise versa. Help telecom technicians in the field to making their work more efficient and more
+        accurate.`
       }
     ],
     index: 0,
