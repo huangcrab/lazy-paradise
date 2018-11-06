@@ -37,14 +37,17 @@ class Demo extends Component {
             </div>
             <br />
             <div className="wrapper">
-              <iframe class="scaled-frame" src={items[index].link} />
               <a
-                className="demo-link"
+                className=""
                 target="_blank"
                 rel="noopener noreferrer"
                 href={items[index].link}
               >
-                {" "}
+                <img
+                  className="scaled-gif"
+                  alt="media"
+                  src={"assets/gifs/" + items[index].media}
+                />
               </a>
             </div>
           </div>

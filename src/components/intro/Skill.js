@@ -18,6 +18,7 @@ const Item = styled.div`
 const List = styled.li`
   background: green;
   margin-bottom: 5px;
+  padding-left: 1px;
   width:${props => props.number}0%
   list-style: none;
   border-right: 2px solid white;

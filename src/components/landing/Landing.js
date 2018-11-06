@@ -4,6 +4,14 @@ class Landing extends Component {
   render() {
     return (
       <section className="section landing">
+        <div className="video-overlay">
+          <video
+            className="fullscreen-video"
+            src="assets/videos/video.mp4"
+            autoPlay={true}
+            loop={true}
+          />
+        </div>
         <div className="item-container">
           <div className="item main">
             <img src="assets/x_blue.png" alt="X" />

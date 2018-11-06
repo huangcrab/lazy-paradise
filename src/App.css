@@ -221,7 +221,8 @@ span {
 }
 /* ---------------------- Gradient ----------------------- */
 h3,
-p {
+p,
+.field ul li {
   font-family: "Mali", cursive;
   font-size: 15px;
   line-height: 25px;
@@ -236,26 +237,22 @@ p {
   left: 0;
   opacity: 0.5;
 }
-/*React Transition*/
+/* React Transition */
 .fade-enter {
   opacity: 0;
   z-index: 1;
 }
-
 .fade-exit {
   opacity: 1;
 }
-
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 500ms linear 500ms;
 }
-
 .fade-exit.fade-exit-active {
   opacity: 0;
   transition: opacity 500ms linear;
 }
-
 /* enter */
 .left-enter {
   transform: translate(-120%);
@@ -313,9 +310,9 @@ p {
   position: relative;
   display: block;
   margin: 0 auto;
-  width: max-content;
   z-index: 99;
   margin-top: 80vh;
+  text-align: center;
 }
 ul.control li {
   display: inline;
@@ -356,6 +353,7 @@ ul.control li .orange {
 }
 .info-btn {
   margin-top: 220px;
+  z-index: 99;
 }
 .field ul {
   border-right: 2px solid blue;
@@ -371,7 +369,6 @@ ul.control li .orange {
   margin: 5px;
   zoom: 0.9;
 }
-
 .demo-link {
   position: absolute;
   background: #0c3b94;
@@ -388,6 +385,56 @@ ul.control li .orange {
 .wrapper {
   position: relative;
   width: auto;
-  height: 200px;
+  height: 300px;
   margin: 10px auto;
+}
+.scaled-gif {
+  margin-top: 20px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.fullscreen-video {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+}
+.video-overlay {
+  background: #366088;
+  opacity: 0.8;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #949494;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #366088;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #366088;
+}
+@media only screen and (min-width: 769px) {
+  h3,
+  p {
+    font-size: 25px;
+    line-height: 40px;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+}
+@media only screen and (min-height: 768px) {
+  .info-btn {
+    margin-top: 330px;
+  }
 }

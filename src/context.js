@@ -32,18 +32,21 @@ export class Provider extends Component {
       {
         id: 1,
         name: "Authentication App",
+        media: "mean.gif",
         link: "https://warm-island-73436.herokuapp.com/",
         tech: ["Angular", "MongoDB", "NodeJs", "Bootstrap", "Heroku", "MLab"]
       },
       {
         id: 2,
         name: "Connector App",
+        media: "mern.gif",
         link: "https://limitless-beach-24902.herokuapp.com/",
         tech: ["React", "MongoDB", "NodeJs", "Bootstrap", "Heroku", "MLab"]
       },
       {
         id: 3,
         name: "Client Panel App",
+        media: "angular.gif",
         link: "https://clientpanel-3bd53.firebaseapp.com/",
         tech: ["Angular", "Firebase", "Bootstrap"]
       }

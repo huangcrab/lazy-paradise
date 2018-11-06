@@ -17,6 +17,11 @@ const Item = styled.div`
   left: 0;
   right: 0;
   overflow-y: scroll;
+
+  @media only screen and (min-height: 768px) {
+    height: 300px;
+    overflow-y: hidden;
+  }
 `;
 
 class Intro extends Component {
@@ -38,6 +43,14 @@ class Intro extends Component {
   render() {
     return (
       <div className="section about">
+        <div className="video-overlay">
+          <video
+            className="fullscreen-video"
+            src="assets/videos/video.mp4"
+            autoPlay={true}
+            loop={true}
+          />
+        </div>
         <div className="item-container">
           <div className="item">
             <h1>About Me</h1>

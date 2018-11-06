@@ -11,6 +11,15 @@ class Projects extends Component {
           const { projects, index, direction } = value;
           return (
             <section className="section projects">
+              <div className="video-overlay">
+                <video
+                  className="fullscreen-video"
+                  src="assets/videos/project.mp4"
+                  autoPlay={true}
+                  loop={true}
+                />
+              </div>
+
               <Project
                 items={projects}
                 index={index}
