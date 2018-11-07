@@ -428,6 +428,19 @@ ul.control li .orange {
   z-index: 100;
   position: absolute;
 }
+#box {
+  background: #fff;
+  position: relative;
+  height: 80px;
+  width: 80px;
+  border-radius: 20px;
+  color: #000;
+  font-size: 7.5rem;
+  text-align: center;
+  line-height: 67px;
+  font-weight: bold;
+  margin: auto;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 3px;
