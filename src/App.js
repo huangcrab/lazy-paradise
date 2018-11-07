@@ -25,6 +25,7 @@ class App extends Component {
       tpl2 + "orange"
     );
   }
+
   render() {
     ReactGA.initialize("UA-108749177-1");
     ReactGA.pageview(window.location.pathname + window.location.search);

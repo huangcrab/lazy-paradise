@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Control from "../../components/layout/Control";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import VideoBack from "../../components/layout/VideoBackGound";
 import styled from "styled-components";
 import Skills from "./Skill";
 import About from "./About";
@@ -31,7 +32,8 @@ class Intro extends Component {
     components: [
       { name: "SKILLS", load: <About /> },
       { name: "ABOUT ME", load: <Skills /> }
-    ]
+    ],
+    video: "assets/videos/video.mp4"
   };
   switchView = () => {
     const index = this.state.content;
@@ -40,17 +42,11 @@ class Intro extends Component {
       name: this.state.content === 0 ? "SKILLS" : "ABOUT ME"
     });
   };
+
   render() {
     return (
       <div className="section about">
-        <div className="video-overlay">
-          <video
-            className="fullscreen-video"
-            src="assets/videos/video.mp4"
-            autoPlay={true}
-            loop={true}
-          />
-        </div>
+        <VideoBack video={this.state.video} />
         <div className="item-container">
           <div className="item">
             <h1>About Me</h1>

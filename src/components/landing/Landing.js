@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import Control from "../../components/layout/Control";
+import VideoBack from "../../components/layout/VideoBackGound";
 class Landing extends Component {
+  state = {
+    video: "assets/videos/video.mp4"
+  };
   render() {
     return (
       <section className="section landing">
-        <div className="video-overlay">
-          <video
-            className="fullscreen-video"
-            src="assets/videos/video.mp4"
-            autoPlay={true}
-            loop={true}
-          />
-        </div>
+        <VideoBack video={this.state.video} />
         <div className="item-container">
           <div className="item main">
             <img src="assets/x_blue.png" alt="X" />

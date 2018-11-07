@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import Project from "./Project";
 import ItemControl from "../../components/layout/ItemControl";
+import VideoBack from "../../components/layout/VideoBackGound";
 import { Consumer } from "../../context";
 
 class Projects extends Component {
+  state = {
+    video: "assets/videos/project.mp4"
+  };
   render() {
     return (
       <Consumer>
@@ -11,15 +15,7 @@ class Projects extends Component {
           const { projects, index, direction } = value;
           return (
             <section className="section projects">
-              <div className="video-overlay">
-                <video
-                  className="fullscreen-video"
-                  src="assets/videos/project.mp4"
-                  autoPlay={true}
-                  loop={true}
-                />
-              </div>
-
+              <VideoBack video={this.state.video} />
               <Project
                 items={projects}
                 index={index}
