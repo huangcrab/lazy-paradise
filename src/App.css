@@ -356,6 +356,10 @@ ul.control li .orange {
   margin-top: 220px;
   z-index: 99;
 }
+.info-item {
+  position: relative;
+  z-index: 99;
+}
 .field ul {
   border-right: 2px solid blue;
 }
