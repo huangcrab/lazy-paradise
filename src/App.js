@@ -6,6 +6,8 @@ import Projects from "./components/projects/Projects";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
+import ReactGA from "react-ga";
+
 import { Provider } from "./context";
 
 import "./App.css";
@@ -24,6 +26,8 @@ class App extends Component {
     );
   }
   render() {
+    ReactGA.initialize("UA-108749177-1");
+    ReactGA.pageview(window.location.pathname + window.location.search);
     return (
       <Provider>
         <Router>
