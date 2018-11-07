@@ -19,7 +19,19 @@ class Project extends Component {
             <h1>
               {index + 1} / {items.length}
               <br />
-              <span>{items[index].name}</span>
+              <span>
+                {items[index].link ? (
+                  <a
+                    href={items[index].link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {items[index].name}
+                  </a>
+                ) : (
+                  items[index].name
+                )}
+              </span>
             </h1>
             <h3>{items[index].date}</h3>
             <p>{items[index].description}</p>

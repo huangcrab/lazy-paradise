@@ -173,6 +173,9 @@ body {
 a:hover {
   cursor: cell;
 }
+a:visited {
+  color: #df541d;
+}
 
 span {
   color: #df541d;
@@ -289,6 +292,7 @@ p,
   position: relative;
   margin: 0 auto;
   top: 10%;
+  z-index: 99;
 }
 .item {
   text-align: center;
