@@ -14,6 +14,9 @@ class Landing extends Component {
             <img src="assets/x_blue.png" alt="X" />
             <h1 className="gradient1">Welcome to "Lazy Paradise"</h1>
             <p>
+              <span>Work Hard, Think Hard, So you can be lazy</span>
+            </p>
+            <p>
               "Laziness" can be a key of future development, the "Laziness" here
               does not mean the quality of being unwilling to work or use
               energy, the "Laziness" here simply means being
