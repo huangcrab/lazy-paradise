@@ -38,9 +38,9 @@ export default class Scene extends Component {
     const geometry1 = new THREE.SphereGeometry(1, 32, 32);
 
     const core = new THREE.MeshStandardMaterial({
-      emissive: 0xff0000,
+      emissive: 0xe42626,
       emissiveIntensity: 1,
-      color: 0xff0000,
+      color: 0xe42626,
       metalness: 0.0,
       transparent: true,
       opacity: 2,
