@@ -446,9 +446,17 @@ ul.control li .orange {
     font-size: 30px;
     line-height: 45px;
   }
+  .scene {
+    width: 200px;
+    height: 200px;
+  }
 }
 @media only screen and (min-height: 768px) {
   .info-btn {
     margin-top: 330px;
+  }
+  .scene {
+    width: 200px;
+    height: 200px;
   }
 }

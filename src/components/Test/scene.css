@@ -1,0 +1,11 @@
+.scene {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.scene canvas {
+  position: relative;
+  margin: 0 auto;
+}
