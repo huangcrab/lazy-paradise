@@ -14,6 +14,8 @@ export default class Scene extends Component {
     this.listCount = 20;
   }
   componentDidMount() {
+    window.onresize = this.onWindowResize;
+
     const lightIn = new THREE.PointLight("#000", 32);
     const lightOut = new THREE.PointLight("#000", 32);
 
@@ -72,6 +74,7 @@ export default class Scene extends Component {
   componentWillUnmount() {
     this.stop();
     this.mount.removeChild(this.renderer.domElement);
+    window.onresize = this.mount.onresize;
   }
   start = () => {
     if (!this.frameId) {
@@ -96,6 +99,13 @@ export default class Scene extends Component {
   };
   renderScene = () => {
     this.renderer.render(this.scene, this.camera);
+  };
+  onWindowResize = () => {
+    const { clientWidth, clientHeight } = this.mount;
+    this.camera.aspect = clientWidth / clientHeight;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(clientWidth, clientHeight);
   };
 
   render() {
