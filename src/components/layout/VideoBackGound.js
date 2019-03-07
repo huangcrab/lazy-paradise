@@ -3,7 +3,8 @@ import Loading from "./Loading";
 
 export default class VideoBackGound extends Component {
   state = {
-    loaded: false
+    loaded: false,
+    mobile: false
   };
   constructor() {
     super();
@@ -11,16 +12,22 @@ export default class VideoBackGound extends Component {
   }
 
   componentDidMount() {
-    this.videoRef.addEventListener("loadedmetadata", () => {
-      console.log(this.videoRef.readyState);
+    if (window.innerWidth < 450) {
       this.setState({
-        loaded: true
+        loaded: true,
+        mobile: true
       });
-    });
+    } else {
+      this.videoRef.addEventListener("loadedmetadata", () => {
+        this.setState({
+          loaded: true
+        });
+      });
+    }
   }
   render() {
     const { video } = this.props;
-    return (
+    return this.state.mobile ? null : (
       <div className="video-overlay">
         {this.state.loaded ? null : <Loading />}
         <video
@@ -32,7 +39,6 @@ export default class VideoBackGound extends Component {
           type="video/mp4"
           muted
         />
-        {}
       </div>
     );
   }
