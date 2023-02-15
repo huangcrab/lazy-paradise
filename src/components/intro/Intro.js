@@ -1,10 +1,12 @@
-import React, { Component } from "react";
-import Control from "../../components/layout/Control";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import VideoBack from "../../components/layout/VideoBackGound";
-import styled from "styled-components";
-import Skills from "./Skill";
-import About from "./About";
+import React, { useState, useEffect } from 'react';
+import Control from '../../components/layout/Control';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import VideoBack from '../../components/layout/VideoBackGound';
+import styled from 'styled-components';
+import Skills from './Skill';
+import About from './About';
+import { useFirebase } from '../../firebase-context';
+import { collection, getDocs, where, query } from 'firebase/firestore';
 
 const Container = styled.div`
   position: relative;
@@ -25,70 +27,82 @@ const Item = styled.div`
   }
 `;
 
-class Intro extends Component {
-  state = {
-    name: "SKILLS",
-    content: 0,
-    components: [
-      { name: "SKILLS", load: <About /> },
-      { name: "ABOUT ME", load: <Skills /> }
-    ],
-    video: "assets/videos/video.mp4"
-  };
-  switchView = () => {
-    const index = this.state.content;
-    this.setState({
-      content: index === 0 ? 1 : 0,
-      name: this.state.content === 0 ? "SKILLS" : "ABOUT ME"
+export default function Intro(props) {
+  const [video] = useState('assets/videos/video.mp4');
+  const [name, setName] = useState('About Me');
+  const [info, setInfo] = useState({
+    github: '',
+    linkedin: '',
+    email: '',
+    intro: '',
+  });
+  const [content, setContent] = useState(0);
+  const [components, setComponents] = useState([
+    { name: 'Skills', load: <About intro="" /> },
+    { name: 'About Me', load: <Skills /> },
+  ]);
+
+  const firebase = useFirebase();
+
+  const switchView = () => {
+    setContent((prevContent) => {
+      return prevContent === 0 ? 1 : 0;
+    });
+
+    setName(() => {
+      return content === 0 ? 'SKILLS' : 'ABOUT ME';
     });
   };
 
-  render() {
-    return (
-      <div className="section about">
-        <VideoBack video={this.state.video} />
-        <div className="item-container">
-          <div className="item">
-            <h1>About Me</h1>
-            <div className="social">
-              <a
-                href="https://github.com/huangcrab"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <i className="about-icon fab fa-github" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/xie-huang-a2b3baa2/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="about-icon fab fa-linkedin" />
-              </a>
-              <a href="mailto:seanhuang129@gmail.com">
-                <i className="about-icon fa fa-envelope" />
-              </a>
-            </div>
-            <Container className="info-section">
-              <TransitionGroup>
-                <CSSTransition
-                  key={this.state.content}
-                  timeout={1000}
-                  classNames={"fade"}
-                >
-                  <Item>{this.state.components[this.state.content].load}</Item>
-                </CSSTransition>
-              </TransitionGroup>
-            </Container>
-            <div className="btn info-btn" onClick={this.switchView.bind(this)}>
-              {this.state.components[this.state.content].name}
-            </div>
+  useEffect(() => {
+    async function getInfo() {
+      const querySnapshot = await getDocs(
+        query(collection(firebase.database(), 'info'), where('id', '==', '1'))
+      );
+      querySnapshot.forEach((doc) => {
+        setInfo(doc.data());
+        if (doc.data().intro) {
+          setComponents([
+            { name: 'SKILLS', load: <About intro={doc.data().intro} /> },
+            { name: 'ABOUT ME', load: <Skills /> },
+          ]);
+        }
+      });
+    }
+
+    getInfo();
+  }, []);
+
+  return (
+    <div className="section about">
+      <VideoBack video={video} />
+      <div className="item-container">
+        <div className="item">
+          <h1>{name}</h1>
+          <div className="social">
+            <a href={info.github} rel="noopener noreferrer" target="_blank">
+              <i className="about-icon fab fa-github" />
+            </a>
+            <a href={info.linkedin} target="_blank" rel="noopener noreferrer">
+              <i className="about-icon fab fa-linkedin" />
+            </a>
+            <a href={'mailto:' + info.email}>
+              <i className="about-icon fa fa-envelope" />
+            </a>
+          </div>
+          <Container className="info-section">
+            <TransitionGroup>
+              <CSSTransition key={content} timeout={1000} classNames={'fade'}>
+                <Item>{components[content].load}</Item>
+              </CSSTransition>
+            </TransitionGroup>
+          </Container>
+          <div className="btn info-btn" onClick={switchView.bind(this)}>
+            {components[content].name}
           </div>
         </div>
-        <Control path={this.props.location} />
       </div>
-    );
-  }
+      <Control path={props.location} />
+    </div>
+  );
 }
-
-export default Intro;
